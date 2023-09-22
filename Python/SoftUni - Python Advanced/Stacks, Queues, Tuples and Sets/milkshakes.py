@@ -6,7 +6,7 @@ milkshakes = 0
 win = False
 
 while chocolates and cups_of_milk:
-    current_chocolate = chocolates[len(chocolates) - 1]
+    current_chocolate = chocolates[-1]
     current_milk = cups_of_milk[0]
     if current_chocolate <= 0 and current_milk <= 0:
         chocolates.pop()
@@ -29,7 +29,7 @@ while chocolates and cups_of_milk:
             break
         continue
     else:
-        chocolates[len(chocolates) - 1] -= 5
+        chocolates[-1] -= 5
         cups_of_milk.rotate(-1)
 
 if not win:
