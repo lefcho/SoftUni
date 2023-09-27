@@ -1,3 +1,4 @@
+# read
 strings = input().split("|")
 
 matrix = []

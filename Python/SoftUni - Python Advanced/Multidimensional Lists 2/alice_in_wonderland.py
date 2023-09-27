@@ -4,7 +4,7 @@ field = []
 alice_r = 0
 alice_c = 0
 tea = 0
-
+# read
 for r in range(n):
     row = input().split()
     for char in row:

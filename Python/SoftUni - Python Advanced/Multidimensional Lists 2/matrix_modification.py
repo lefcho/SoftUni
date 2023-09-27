@@ -1,7 +1,7 @@
 rows = int(input())
 
 matrix = []
-
+# read
 for i in range(rows):
     matrix.append([int(x) for x in input().split()])
 

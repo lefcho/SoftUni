@@ -5,7 +5,7 @@ max_score = float('-inf')
 bunny = (0, 0)
 best_direction = ''
 best_indexes = []
-
+# read
 for r in range(n):
     row = []
     for i in input().split():

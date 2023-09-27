@@ -3,7 +3,7 @@ n = int(input())
 board = []
 knights = []
 removed_knights = 0
-
+# read
 for row in range(n):
     board.append([x for x in input()])
     for col in range(n):
