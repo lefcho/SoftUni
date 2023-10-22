@@ -1,0 +1,13 @@
+.html
+- - - app.html
+- - - htmlll.html
+.js
+- - - hello.js
+- - - index.js
+.pptx
+- - - example.pptx
+.py
+- - - directory_traversal.py
+.txt
+- - - report.txt
+- - - text.txt

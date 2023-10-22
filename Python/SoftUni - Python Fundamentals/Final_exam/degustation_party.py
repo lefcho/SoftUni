@@ -33,4 +33,3 @@ for guest, liked_meals in dict_of_guests.items():
     print(", ".join(liked_meals))
 
 print(f"Unliked meals: {len(unliked_meals)}")
-
