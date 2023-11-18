@@ -8,6 +8,11 @@ class Storage:
         self.topics = []
         self.documents = []
 
+    @staticmethod
+    def __find_object(object_id, from_collection):
+        obj = next((o for o in from_collection if o.id == object_id), None)
+        return obj
+
     def add_category(self, category: Category):
         if category not in self.categories:
             self.categories.append(category)
@@ -21,4 +26,35 @@ class Storage:
             self.documents.append(document)
 
     def edit_category(self, category_id: int, new_name: str):
-        pass
+        category = self.__find_object(category_id, self.categories)
+        category.edit(new_name)
+
+    def edit_topic(self, topic_id: int, new_topic: str, new_storage_folder: str):
+        topic = self.__find_object(topic_id, self.topics)
+        topic.edit(new_topic, new_storage_folder)
+
+    def edit_document(self, document_id: int, new_file_name: str):
+        document = self.__find_object(document_id, self.documents)
+        document.edit(new_file_name)
+
+    def delete_category(self, category_id):
+        category = self.__find_object(category_id, self.categories)
+        self.categories.remove(category)
+
+    def delete_topic(self, topic_id):
+        topic = self.__find_object(topic_id, self.topics)
+        self.topics.remove(topic)
+
+    def delete_document(self, document_id):
+        document = self.__find_object(document_id, self.documents)
+        self.documents.remove(document)
+
+    def get_document(self, document_id):
+        document = self.__find_object(document_id, self.documents)
+        return document
+
+    def __repr__(self):
+        result = []
+        for doc in self.documents:
+            result.append(repr(doc))
+        return "\n".join(result)
