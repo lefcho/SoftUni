@@ -1,0 +1,40 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background-color: #884343;
+    block-size: border-box;
+}
+h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.2;
+    text-align: center;
+    background-color: rgb(224, 245, 219);
+    padding: 1em;
+    border-radius: 0.3em;
+    margin: 0;
+    height: 5em;
+    overflow: hidden;
+}
+
+p {
+    background-color: aliceblue;
+    padding: 1em;
+    border-radius: 0.3em;
+    flex-basis: 100%;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    max-width: 70vw;
+    margin: 2em auto;
+    gap: 2em;
+}
+
+
+article {
+    flex-basis: 220px;
+    display: flex;
+    flex-direction: column;
+
+}

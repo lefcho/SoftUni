@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2em;
+}
+
+.container {
+    display: flex;
+    min-width: 65vw;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weekend, .workweek {
+    flex: 1 0 100%;
+}
+
+
+span {
+    flex-grow: 1;
+    border: 1px black solid;
+    padding: 0.5em;
+    text-align: center;
+    padding-bottom: 4em;
+}

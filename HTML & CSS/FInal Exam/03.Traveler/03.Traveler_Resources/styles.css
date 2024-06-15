@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap");
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px;
+    line-height: 1.2;
+    font-family: "Cormorant Infant", serif;
+    font-weight: 100;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.image-bc {
+    background-image: url(images/poster.jpg);
+    background-color: rgb(163, 162, 162);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+header {
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+header p a {
+    display: block;
+    width: 110px;
+    height: 60px;
+    overflow: hidden;
+    text-indent: -200vw;
+    background-image: url(images/logo.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header ul {
+    list-style: none outside;
+    display: flex;
+    flex-direction: row;
+}
+
+header ul li {
+    padding: 0em 1em;
+}
+
+header ul li a {
+    font-family: "Karla", serif;
+    text-decoration: none;
+    color: white;
+}
+
+.title-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em;
+}
+
+.title-container h1{
+    font-size: 90px;
+    padding: 1em;
+}
+
+.title-container p {
+    font-family: "Karla", serif;
+    padding: 0em 15em;
+    padding-bottom: 5em;
+    text-align: center;
+}
+
+.main-r1 {
+    width: 65%;
+    margin: 0 auto;
+    padding: 2em 1em;
+    background-color: #f8f0e9;
+}
+
+.main-r1 p:first-of-type {
+    font-family: "Karla", serif;
+    padding-bottom: 3em;
+}
+
+
+.quote {
+    font-weight: bold;
+    font-size: 42px;
+    font-style: italic;
+    line-height: 1.1;
+    padding-bottom: 1em;
+}
+
+.main-r2 {
+    font-family: "Karla", serif;
+    padding: 0em 5em;
+    text-align: center;
+    background-color: #e14747;
+}
+
+.main-r2 h6 {
+    
+    font-size: 18px;
+    padding-top: 2em;
+    color: white;
+}
+
+.main-r2 p {
+    font-size: 14px;
+    color: white;
+    padding: 3em 15em;
+}
+
+.main-r3 {
+    background-color: #f8f0e9;
+    padding: 3em 10em;
+    width: 55%;
+    margin: 0 auto;
+}
+
+h3 {
+    padding: 1.5em 0.6em;
+    text-align: center;
+    font-size: 50px;
+}
+
+.main-r3 p {
+    font-size: 14px;
+    font-family: "Karla", serif;
+}
+
+.part1 p:first-of-type {
+    padding-bottom: 2em;
+}
+
+.button {
+    padding: 0.5em 1em;
+    border: 1px solid black;
+    border-radius: 0.3em;
+    width: fit-content;
+    margin: 2em 0em;
+}
+
+.button a {
+    text-decoration: none;
+    color: black;
+}
+.read-all {
+    display: flex;
+    justify-content: center;
+}
+.main-r4 {
+    padding: 4em;
+    text-align: center;
+    background-color: #e14747;
+    color: white;
+}
+
+.main-r4 p {
+    font-size: 14px;
+    font-weight: 100;
+    font-family: "Karla", serif;
+    padding-bottom: 3em;
+}
+
+button {
+    padding: 1.2em 1.8em;
+    color: black;
+    background-color: #fad87a;
+    border-radius: 5em;
+}
+
+footer {
+    font-size: 12px;
+    color: white;
+    background-color: #352b2a;
+    padding: 3em;
+}
+
+footer p {
+    font-size: 11px;
+    font-family: "Karla", serif;
+    padding: 2em 0em;
+}
+
+footer img {
+    width: 50px;
+}
+
+.rights {
+    font-size: 10px;
+    padding: 0em 0em 2em 0em;
+    color: #716b5f;
+}

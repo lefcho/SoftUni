@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");    
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+html {
+    font: 14px/1.5;
+    font-family: "Agbalumo", serif;
+}
+
+.container {
+    width: 860px;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    border: 3px solid black;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(220, 220, 220);
+}
+
+header, main , footer {
+    padding: 1.5em;
+    padding-bottom: 0em;
+}
+
+header * {
+    border-bottom: 2px black solid;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+main .photo-container {
+    width: 40%;
+    border: 2px solid black;
+    padding: 0.5em;
+}
+
+main .photo-container p {
+    padding-top: 1em;
+    text-indent: 3em;
+    font-size: 12.5px;
+}
+
+main .right-container {
+    width: 57%;
+}
+
+main .right-container p {
+    text-indent: 2em;
+    padding: 1em;
+}
+
+.main-footer {
+    width: 45%;
+    text-align: center;
+    color: white;
+    background-color: black;
+    margin-top: 2em;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer {
+    background-color: rgb(220, 220, 220);
+    padding-top: 1em;;
+}
+
+footer .bold {
+    display: inline;
+    font-weight: bold;
+}
+
+footer > p {
+    line-height: 1.7;
+}
+
+footer :last-child {
+    padding: 0.2em;
+}

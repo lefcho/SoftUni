@@ -1,0 +1,95 @@
+@media (max-width: 600px) {
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .game-world-header {
+        height: 190px;
+    } 
+
+    .tm-header-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .tm-site-text-box {
+        text-align: center;
+    }
+
+    .tm-section-title {
+        font-size: 3rem;
+        margin-left: 0;
+        padding: 0em 1em;
+    }
+
+    p.col-12.text-center {
+        font-size: 25px;
+    }
+
+    section.tm-paging-links nav ul li {
+        font-size: 30px;
+    }
+
+    #tm-gallery-page-all {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    #tm-gallery-page-all article {
+        width: 90%;
+        max-width: 550px;
+        padding: 2em;
+    }
+
+    .tm-gallery {
+        margin: 0;
+        width: 100%;
+    }
+
+    .tm-gallery-title {
+        text-align: center;
+        font-size: 38px;
+    }
+
+    .tm-gallery-description {
+        font-size: 22px;
+    }
+
+    .tm-gallery-price {
+        font-size: 38px;
+        margin-bottom: 0;
+    }
+
+    article.row {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 550px;
+    }
+
+    .tm-cta-section {
+        margin: 0;
+        padding: 0;
+        width: 90%;
+        display: flex;
+    }
+
+    article.row img {
+        width: 85%;
+        overflow: hidden;
+    }
+    
+    .ttm-description-box {
+        padding-left: 3em;
+        font-size: 26px;
+    }
+
+}

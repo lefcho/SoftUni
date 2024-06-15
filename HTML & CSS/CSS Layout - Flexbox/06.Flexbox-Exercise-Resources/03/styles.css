@@ -1,0 +1,30 @@
+div {
+    display: flex;
+    max-width: 15vw;
+    height: 35em;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap ;
+}
+
+span {
+    border: 1px black solid;
+    padding: 0.5em;
+    margin: 0.5em;
+    width: 1rem;
+}
+#s {
+    order: 1;
+}
+
+#e {
+    order: 2;
+}
+
+#m {
+    order: 3;
+}
+
+#a {
+    order: 4;
+}
