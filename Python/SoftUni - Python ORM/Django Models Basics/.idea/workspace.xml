@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13a5d655-d7b0-4676-9b5d-4bea07608ded" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Django Models Basics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Django Models Basics.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,14 +44,17 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.__init__.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/ivand/PycharmProjects/SoftUni/Python/SoftUni - Python ORM/Django Models Basics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.intellij.python.django.customization.DjangoModulesConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -103,7 +108,7 @@
       <updated>1718904346609</updated>
       <workItem from="1718904348516" duration="180000" />
       <workItem from="1718904533057" duration="468000" />
-      <workItem from="1718905017594" duration="4722000" />
+      <workItem from="1718905017594" duration="5513000" />
     </task>
     <servers />
   </component>
