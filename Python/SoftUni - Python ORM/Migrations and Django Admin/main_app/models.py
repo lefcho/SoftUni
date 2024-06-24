@@ -14,8 +14,8 @@ class UniqueBrands(models.Model):
 
 
 class EventRegistration(models.Model):
-    event_name = models.CharField(max_length=50)
-    participant_name = models.CharField(max_length=68)
+    event_name = models.CharField(max_length=60)
+    participant_name = models.CharField(max_length=50)
     registration_date = models.DateTimeField()
 
     def __str__(self):
