@@ -11,3 +11,12 @@ class UniqueBrands(models.Model):
         max_length=25,
         unique=True,
     )
+
+
+class EventRegistration(models.Model):
+    event_name = models.CharField(max_length=50)
+    participant_name = models.CharField(max_length=68)
+    registration_date = models.DateTimeField()
+
+    def __str__(self):
+        return f"{self.participant_name} - {self.event_name}"
