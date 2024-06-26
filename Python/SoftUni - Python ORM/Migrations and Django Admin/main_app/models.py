@@ -96,13 +96,32 @@ class Person(models.Model):
 
     age_group = models.CharField(
         max_length=20,
-        default='No age group'
+        default='No age group',
     )
 
     def __str__(self):
         return f'Name: {self.name}'
 
 
+class Item(models.Model):
+    name = models.CharField(
+        max_length=100,
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+    )
+
+    quantity = models.PositiveIntegerField(
+        default=1,
+    )
+
+    rarity = models.CharField(
+        max_length=20,
+        default='No rarity',
+        null=True,
+    )
 
 
 
