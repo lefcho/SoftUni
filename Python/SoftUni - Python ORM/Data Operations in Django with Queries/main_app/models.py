@@ -112,7 +112,34 @@ class HotelRoom(models.Model):
     )
 
 
+class ClassChoices(models.TextChoices):
+    MAGE = 'Mage', 'Mage'
+    WARRIOR = 'Warrior', 'Warrior'
+    ASSASSIN = 'Assassin', 'Assassin'
+    SCOUT = 'Scout', 'Scout'
 
+
+class Character(models.Model):
+    name = models.CharField(
+        max_length=100,
+    )
+
+    class_name = models.CharField(
+        max_length=20,
+        choices=ClassChoices.choices,
+    )
+
+    level = models.PositiveIntegerField()
+
+    strength = models.PositiveIntegerField()
+
+    dexterity = models.PositiveIntegerField()
+
+    intelligence = models.PositiveIntegerField()
+
+    hit_points = models.PositiveIntegerField()
+
+    inventory = models.TextField()
 
 
 
