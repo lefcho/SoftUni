@@ -6,7 +6,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "orm_skeleton.settings")
 django.setup()
 
 # Import your models here
-from main_app.models import Pet, Artifact, Location, Car, Task
+from main_app.models import Pet, Artifact, Location, Car, Task, HotelRoom
 
 
 # Create queries within functions
@@ -102,6 +102,46 @@ def encode_and_replace(text: str, task_title: str):
     Task.objects.filter(title=task_title).update(description=decoded_text)
 
 
+def get_deluxe_rooms():
+    deluxe_rooms = HotelRoom.objects.filter(room_type='Deluxe')
+    result = []
+
+    for room in deluxe_rooms:
+        if room.id % 2 == 0:
+            result.append(f'Deluxe room with number {room.room_number} costs {room.price_per_night}$ per night!')
+
+    return '\n'.join(result)
+
+
+def increase_room_capacity():
+    rooms = HotelRoom.objects.all().order_by('id')
+
+    previous_room_capacity = None
+
+    for room in rooms:
+        if not room.is_reserved:
+            continue
+
+        if previous_room_capacity is not None:
+            room.capacity += previous_room_capacity
+        else:
+            room.capacity += room.id
+
+        previous_room_capacity = room.capacity
+        room.save()
+
+
+def reserve_first_room():
+    first_room = HotelRoom.objects.first()
+    first_room.is_reserved = True
+    first_room.save()
+
+
+def delete_last_room():
+    last_room = HotelRoom.objects.last()
+
+    if not last_room.is_reserved:
+        last_room.delete()
 
 
 
