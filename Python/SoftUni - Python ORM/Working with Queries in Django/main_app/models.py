@@ -4,12 +4,23 @@ from django.db import models
 # Create your models here.
 
 class ChessPlayer(models.Model):
-    username = models.CharField(max_length=100, unique=True)
-    title = models.CharField(max_length=100, default="no title")
+    username = models.CharField(
+        max_length=100,
+        unique=True,
+    )
+    title = models.CharField(
+        max_length=100,
+        default="no title",
+    )
+
     rating = models.PositiveIntegerField(default=1500)
+
     games_played = models.PositiveIntegerField(default=0)
+
     games_won = models.PositiveIntegerField(default=0)
+
     games_lost = models.PositiveIntegerField(default=0)
+
     games_drawn = models.PositiveIntegerField(default=0)
 
 
@@ -21,11 +32,21 @@ class Meal(models.Model):
         ('Snack', 'Snack'),
     )
 
-    name = models.CharField(max_length=100)
-    meal_type = models.CharField(max_length=10, choices=MEAL_TYPE_CHOICES)
+    name = models.CharField(
+        max_length=100
+    )
+
+    meal_type = models.CharField(
+        max_length=10,
+        choices=MEAL_TYPE_CHOICES
+    )
+
     preparation_time = models.CharField(max_length=30)
+
     difficulty = models.PositiveIntegerField()
+
     calories = models.PositiveIntegerField()
+
     chef = models.CharField(max_length=100)
 
 
@@ -37,11 +58,20 @@ class Dungeon(models.Model):
     )
 
     name = models.CharField(max_length=100)
-    difficulty = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES)
+
+    difficulty = models.CharField(
+        max_length=10,
+        choices=DIFFICULTY_CHOICES,
+    )
+
     location = models.CharField(max_length=100)
+
     boss_name = models.CharField(max_length=100)
+
     recommended_level = models.PositiveIntegerField()
+
     boss_health = models.PositiveIntegerField()
+
     reward = models.TextField()
 
 
@@ -55,10 +85,18 @@ class Workout(models.Model):
     )
 
     name = models.CharField(max_length=200)
-    workout_type = models.CharField(max_length=20, choices=WORKOUT_TYPE_CHOICES)
+
+    workout_type = models.CharField(
+        max_length=20,
+        choices=WORKOUT_TYPE_CHOICES,
+    )
+
     duration = models.CharField(max_length=30)
+
     difficulty = models.CharField(max_length=50)
+
     calories_burned = models.PositiveIntegerField()
+
     instructor = models.CharField(max_length=100)
 
 
