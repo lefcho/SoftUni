@@ -9,7 +9,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "orm_skeleton.settings")
 django.setup()
 
 # Import your models here
-from main_app.models import Author, Artist, Song, Product, Review, DrivingLicense, Driver
+from main_app.models import Author, Artist, Song, Product, Review, DrivingLicense, Driver, Owner, Registration, Car
 
 
 def show_all_authors_with_their_books():
@@ -86,6 +86,18 @@ def get_drivers_with_expired_licenses(due_date: date) -> QuerySet[Driver]:
     )
 
 
+def register_car_by_owner(owner: Owner) -> str:
+    registration = Registration.objects.filter(car__isnull=True).first()
+    car = Car.objects.filter(registration__isnull=True).first()
+
+    car.owner = owner
+    car.save()
+
+    registration.registration_date = date.today()
+    registration.car = car
+    registration.save()
+
+    return f"Successfully registered {car.model} to {owner.name} with registration number {registration.registration_number}."
 
 
 
