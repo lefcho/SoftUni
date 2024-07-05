@@ -1,4 +1,6 @@
 import os
+from datetime import timedelta, date
+
 import django
 from django.db.models import QuerySet
 
@@ -7,7 +9,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "orm_skeleton.settings")
 django.setup()
 
 # Import your models here
-from main_app.models import Author, Artist, Song, Product, Review
+from main_app.models import Author, Artist, Song, Product, Review, DrivingLicense, Driver
 
 
 def show_all_authors_with_their_books():
@@ -69,6 +71,19 @@ def get_products_with_no_reviews() -> QuerySet[Product]:
 def delete_products_without_reviews() -> None:
     get_products_with_no_reviews().delete()
 
+
+def calculate_licenses_expiration_dates() -> str:
+    licenses = DrivingLicense.objects.all().order_by('-license_number')
+    return ('\n'.join
+            (f'License with number: {l.license_number} expires on {l.issue_date + timedelta(days=365)}!' for l in licenses))
+
+
+def get_drivers_with_expired_licenses(due_date: date) -> QuerySet[Driver]:
+    min_crate_date = due_date - timedelta(days=365)
+
+    return Driver.objects.filter(
+        license__issue_date__gt=min_crate_date
+    )
 
 
 
