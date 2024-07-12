@@ -2,8 +2,8 @@ from decimal import Decimal
 
 from django.core.validators import MinValueValidator, RegexValidator, MinLengthValidator
 from django.db import models
-from django.core.exceptions import ValidationError
 
+from main_app.mixins import RechargeEnergyMixin
 from main_app.validators import validate_name
 
 
@@ -146,7 +146,7 @@ class DiscountedProduct(Product):
         return f"Discounted Product: {self.name}"
 
 
-class Hero(models.Model):
+class Hero(models.Model, RechargeEnergyMixin):
     name = models.CharField(
         max_length=100,
     )
@@ -159,11 +159,36 @@ class Hero(models.Model):
 
 
 class SpiderHero(Hero):
-    pass
+    class Meta:
+        proxy = True
+
+    def swing_from_buildings(self):
+        if self.energy >= 80:
+            if self.energy == 80:
+                self.energy -= 79
+            else:
+                self.energy -= 80
+            self.save()
+            return f"{self.name} as Spider Hero swings from buildings using web shooters"
+
+        return f"{self.name} as Spider Hero is out of web shooter fluid"
 
 
 class FlashHero(Hero):
-    pass
+    class Meta:
+        proxy = True
+
+    def run_at_super_speed(self):
+        if self.energy >= 65:
+            if self.energy == 65:
+                self.energy -= 64
+            else:
+                self.energy -= 65
+            self.save()
+            return f"{self.name} as Flash Hero runs at lightning speed, saving the day"
+
+        return f"{self.name} as Flash Hero needs to recharge the speed force"
+
 
 
 
