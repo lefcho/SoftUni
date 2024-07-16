@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbce2b6f-b82f-443d-aa06-ed1b00efdeff" name="Changes" comment="task 2 and 3">
-      <change afterPath="$PROJECT_DIR$/main_app/migrations/0003_hero_flashhero_spiderhero.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_app/mixins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/caller.py" beforeDir="false" afterPath="$PROJECT_DIR$/caller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,30 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Django Server.Advanced Django Model Techniques.executor&quot;: &quot;Run&quot;,
-    &quot;Python.caller.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ivand/PycharmProjects/SoftUni/Python/SoftUni - Python ORM/Advanced Django Model Techniques&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Django Server.Advanced Django Model Techniques.executor": "Run",
+    "Python.caller.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/ivand/PycharmProjects/SoftUni/Python/SoftUni - Python ORM/Advanced Queries in Django",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ivand\PycharmProjects\SoftUni\Python\SoftUni - Python ORM\Advanced Django Model Techniques\main_app" />
@@ -153,7 +148,8 @@
       <option name="presentableId" value="Default" />
       <updated>1720801643316</updated>
       <workItem from="1720801644341" duration="2512000" />
-      <workItem from="1720804441345" duration="3156000" />
+      <workItem from="1720804441345" duration="3468000" />
+      <workItem from="1721149825451" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <option name="closed" value="true" />
