@@ -1,5 +1,7 @@
 from django.core.validators import MinLengthValidator, MinValueValidator, MaxValueValidator
 from django.db import models
+
+from main_app.managers import DirectorManager
 from main_app.mixins import AwardedMixin, LastUpdatedMixin
 
 
@@ -27,6 +29,8 @@ class Director(BaseModel):
         validators=[MinValueValidator(0)],
         default=0,
     )
+
+    objects = DirectorManager()
 
 
 class Actor(BaseModel, AwardedMixin, LastUpdatedMixin):
