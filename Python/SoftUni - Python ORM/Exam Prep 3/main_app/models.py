@@ -1,5 +1,6 @@
 from django.core.validators import MinLengthValidator, MaxValueValidator, MinValueValidator
 from django.db import models
+from main_app.managers import AuthorManager
 
 
 class PublishedOnMixin(models.Model):
@@ -34,6 +35,8 @@ class Author(models.Model):
         null=True,
         blank=True,
     )
+
+    objects = AuthorManager()
 
 
 class Article(PublishedOnMixin):
