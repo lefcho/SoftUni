@@ -1,5 +1,6 @@
 from django.core.validators import MinLengthValidator, MaxValueValidator
 from django.db import models
+# from main_app.mangers import TennisPlayerManager
 
 
 class TennisPlayer(models.Model):
@@ -22,6 +23,8 @@ class TennisPlayer(models.Model):
     is_active = models.BooleanField(
         default=True,
     )
+
+    # objects = TennisPlayerManager()
 
 
 class Tournament(models.Model):
@@ -85,7 +88,7 @@ class Match(models.Model):
         to=TennisPlayer,
         null=True,
         on_delete=models.SET_NULL,
-        related_name='matches_winner',
+        related_name='matches_won',
     )
 
 
