@@ -1,6 +1,6 @@
 from django.core.validators import MinLengthValidator, MaxValueValidator
 from django.db import models
-# from main_app.mangers import TennisPlayerManager
+from main_app.mangers import TennisPlayerManager
 
 
 class TennisPlayer(models.Model):
@@ -24,7 +24,7 @@ class TennisPlayer(models.Model):
         default=True,
     )
 
-    # objects = TennisPlayerManager()
+    objects = TennisPlayerManager()
 
 
 class Tournament(models.Model):
