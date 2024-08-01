@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url('https://fonts.googleapis.com/css?family=Roboto:300|Alkalami|Kaushan+Script');
 
 .login-page {
     width: 360px;
@@ -12,7 +12,6 @@
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-
     padding: 45px;
     text-align: center;
     border-radius: 10px;
@@ -50,28 +49,33 @@
     max-height: 50px;
     min-height: 50px;
     margin-bottom: 10px;
-
 }
 
-.form button {
-    font-family: 'Alkalami', serif;
-    font-family: 'Kaushan Script', cursive;
+.form button,
+.cancel-btn {
+    text-decoration: none;
+    font-family: 'Alkalami', serif, 'Kaushan Script', cursive;
     text-transform: uppercase;
     outline: 0;
     background: rgb(214, 112, 16);
     width: 100%;
     border: 0;
-    padding: 15px;
+    padding: 10px 0;
+    margin: 5px 0;
     color: #ffffff;
     font-size: 14px;
     cursor: pointer;
     border-radius: 5px;
-
+    display: inline-block; /* Ensure buttons do not overlap */
+    text-align: center; /* Center text inside buttons */
 }
 
 .form button:hover,
 .form button:active,
-.form button:focus {
+.form button:focus,
+.cancel-btn:hover,
+.cancel-btn:active,
+.cancel-btn:focus {
     background: #bd2c2c;
 }
 

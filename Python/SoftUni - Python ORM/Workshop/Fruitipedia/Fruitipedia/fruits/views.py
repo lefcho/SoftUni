@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
-from Fruitipedia.fruits.forms import CategoryAddForm, AddFruitForm, EditFruitForm
+from Fruitipedia.fruits.forms import CategoryAddForm, AddFruitForm, EditFruitForm, DeleteFruitForm
 from Fruitipedia.fruits.models import Fruit
 
 
@@ -35,8 +35,13 @@ def edit_view(request, id):
     else:
         form = EditFruitForm(request.POST, instance=fruit)
 
+        if form.is_valid():
+            form.save()
+            return redirect('dashboard')
+
     context = {
-        'form': form
+        'form': form,
+        'fruit': fruit
     }
 
     return render(request, 'fruits/edit-fruit.html', context)
@@ -53,7 +58,21 @@ def details_view(request, id):
 
 
 def delete_view(request, id):
-    return render(request, 'fruits/delete-fruit.html')
+    fruit = Fruit.objects.get(id=id)
+
+    if request.method == 'GET':
+        form = DeleteFruitForm(instance=fruit)
+    else:
+        form = DeleteFruitForm(request.POST, instance=fruit)
+        fruit.delete()
+        return redirect('dashboard')
+
+    context = {
+        'form': form,
+        'fruit': fruit
+    }
+
+    return render(request, 'fruits/delete-fruit.html', context)
 
 
 def create_category(request):

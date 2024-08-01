@@ -4,10 +4,11 @@
     <section id="edit">
         <div class="form">
             <h2>Edit Fruit</h2>
-            <form class="edit-form">
+            <form class="edit-form" method="POST" action="{% url 'edit_fruit' fruit.id %}">
                 {{ form }}
                 {% csrf_token %}
                 <button type="submit">Edit</button>
+                <a class="cancel-btn" href="{% url 'dashboard' %}">Cancel</a>
             </form>
         </div>
     </section>

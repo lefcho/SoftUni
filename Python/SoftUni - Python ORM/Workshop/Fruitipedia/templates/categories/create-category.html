@@ -9,6 +9,7 @@
                 {{ form }}
                 {% csrf_token %}
                 <button type="submit">Add Category</button>
+                <a class="cancel-btn" href="{% url 'index' %}">Cancel</a>
             </form>
         </div>
     </section>

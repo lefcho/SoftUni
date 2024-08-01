@@ -1,8 +1,11 @@
 {% extends 'common/base.html' %}
-
+{% load static %}
 {% block content %}
     <section id="details">
         <div id="details-wrapper">
+            <a id="back-details" href="{% url 'dashboard' %}">
+            <img id="back-img" src="{% static 'images/back-btn.png' %}" alt="BACK"/>
+            </a>
             <!-- fruit image -->
             <img
                     id="details-img"

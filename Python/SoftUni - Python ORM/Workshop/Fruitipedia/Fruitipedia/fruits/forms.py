@@ -42,3 +42,13 @@ class AddFruitForm(BaseFruitForm):
 
 class EditFruitForm(BaseFruitForm):
     pass
+
+
+class DeleteFruitForm(BaseFruitForm):
+    def __init__(self, *args, **kwargs):
+        super(DeleteFruitForm, self).__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['readonly'] = True
+
+        self.fields['category'].widget.attrs['disabled'] = True
+
