@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>My Music App</title>
-    <!-- Static Load -->
-    <link rel="stylesheet" href="/static/css/style.css" />
-  </head>
+{% extends 'base.html' %}
 
-  <body>
-    <div id="box">
-      <!-- Navigation Bar -->
-      <header>
-        <nav>
-          <img src="/static/images/headphones.png" alt="headphones" />
-          <a href="#">Home</a>
-          <ul></ul>
-          <ul>
-            <!--Only for user with created profile-->
-            <li><a href="#">Create Album</a></li>
-            <li><a href="#">Profile</a></li>
-          </ul>
-        </nav>
-      </header>
-      <!-- End Navigation Bar -->
+
+{% block content %}
+
 
       <!-- Main Content -->
       <!-- Catalog with Albums-->
@@ -34,7 +14,7 @@
         <h1>All Albums</h1>
         <!-- First Card-Box in catalog -->
         <div class="card-box">
-          <img src="/static/images/BrandiCarlile.png" alt="Cover Image" />
+          <img src="/images/BrandiCarlile.png" alt="Cover Image" />
           <div>
             <div class="text-center">
               <p class="name">Name: In These Silent Days</p>
@@ -51,7 +31,7 @@
 
         <!-- Second Card-Box in catalog -->
         <div class="card-box">
-          <img src="/static/images/pinkFloyd.jpg" />
+          <img src="/images/pinkFloyd.jpg" />
           <div>
             <div class="text-center">
               <p class="name">Name: The Dark Side of the Moon</p>
@@ -68,7 +48,7 @@
 
         <!-- Third Card-Box in catalog -->
         <div class="card-box">
-          <img src="/static/images/Lorde.jpg" />
+          <img src="/images/Lorde.jpg" />
           <div>
             <div class="text-center">
               <p class="name">Name: Melodrama</p>
@@ -84,11 +64,4 @@
         <!-- End Third Card-Box in catalog -->
       </section>
 
-      <!-- Footer -->
-      <footer>
-        <div>&copy;SoftUni Team 2024. All rights reserved.</div>
-      </footer>
-      <!-- End Footer -->
-    </div>
-  </body>
-</html>
+{% endblock %}
