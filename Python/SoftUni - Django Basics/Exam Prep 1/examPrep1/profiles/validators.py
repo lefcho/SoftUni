@@ -21,5 +21,5 @@ class AlphaNumericalValidator:
 
     def __call__(self, value, *args, **kwargs):
         slugged_value = slugify(value)
-        if '-' in value or value != slugged_value:
+        if '-' in value or value.lower() != slugged_value:
             raise ValidationError(self.message)
