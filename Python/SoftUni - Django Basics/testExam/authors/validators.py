@@ -41,5 +41,5 @@ class ExactDigitsValidator:
             self.__message = value
 
     def __call__(self, value, *args, **kwargs):
-        if len(value) != self.exact_digits or not value.isdigit():
+        if len(value) != self.exact_digits:
             raise ValidationError(self.message)
