@@ -4,8 +4,17 @@ def print_board(board):
     print()
 
 
-def can_place_queen(row, col):
-    return 1
+def can_place_queen(row, col, rows, cols, diagonal_1, diagonal_2):
+    if row in rows:
+        return False
+    if col in cols:
+        return False
+    if (row - col) in diagonal_1:
+        return False
+    if (row + col) in diagonal_2:
+        return False
+
+    return True
 
 
 def set_queen(row, col, board):
