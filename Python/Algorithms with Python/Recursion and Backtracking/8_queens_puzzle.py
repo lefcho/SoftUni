@@ -17,12 +17,20 @@ def can_place_queen(row, col, rows, cols, diagonal_1, diagonal_2):
     return True
 
 
-def set_queen(row, col, board):
-    pass
+def set_queen(row, col, board, rows, cols, diagonal_1, diagonal_2):
+    board[row][col] = '*'
+    rows.add(row)
+    cols.add(col)
+    diagonal_1.add(row - col)
+    diagonal_2.add(row + col)
 
 
-def remove_queen(row, col, board):
-    pass
+def remove_queen(row, col, board, rows, cols, diagonal_1, diagonal_2):
+    board[row][col] = '-'
+    rows.remove(row)
+    cols.remove(col)
+    diagonal_1.remove(row - col)
+    diagonal_2.remove(row + col)
 
 
 def put_queens(row, board, rows, cols, diagonal_1, diagonal_2):
@@ -30,10 +38,10 @@ def put_queens(row, board, rows, cols, diagonal_1, diagonal_2):
         print_board(board)
         return
     for col in range(8):
-        if can_place_queen(row, col):
-            set_queen(row, col, board)
+        if can_place_queen(row, col, rows, cols, diagonal_1, diagonal_2):
+            set_queen(row, col, board, rows, cols, diagonal_1, diagonal_2)
             put_queens(row + 1, board, rows, cols, diagonal_1, diagonal_2)
-            remove_queen(row, col, board)
+            remove_queen(row, col, board, rows, cols, diagonal_1, diagonal_2)
 
 
 n = 8
