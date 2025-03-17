@@ -1,1 +1,77 @@
-m2
+https:\/\/courses.zahariev.pro\/check.php?20250317160958p1h4FXdimK
+
+1
+PS C:\Users\ivand> ssh -p 10011 ivan@localhost
+The authenticity of host '[localhost]:10011 ([127.0.0.1]:10011)' can't be established.
+ED25519 key fingerprint is SHA256:Z6ZKp+TIkDr607741lJbt06co6V2tqzzm4+GzpFtu4E.
+This host key is known by the following other names/addresses:
+    C:\Users\ivand/.ssh/known_hosts:10: [localhost]:10010
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:10011' (ED25519) to the list of known hosts.
+ivan@localhost's password:
+Last login: Sun Mar 16 21:28:50 2025
+[ivan@almalinux ~]$ sudo useradd -m -c "ProjectX Developer" developer
+[sudo] password for ivan:
+[ivan@almalinux ~]$ sudo passwd developer
+Changing password for user developer.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is based on a dictionary word
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[ivan@almalinux ~]$ sudo useradd -m -c "ProjectX Manager" manager
+[ivan@almalinux ~]$ sudo passwd manager
+Changing password for user manager.
+New password:
+BAD PASSWORD: The password fails the dictionary check - it is based on a dictionary word
+Retype new password:
+passwd: all authentication tokens updated successfully.
+
+2
+[ivan@almalinux ~]$ sudo groupadd -g 3000 projectxyz
+
+3
+[ivan@almalinux ~]$ sudo usermod -aG projectxyz developer
+[ivan@almalinux ~]$ sudo usermod -aG projectxyz manager
+
+4
+[ivan@almalinux ~]$ sudo mkdir -p /shared/projects
+
+5
+[ivan@almalinux ~]$ cd /shared/projects
+[ivan@almalinux projects]$ sudo mkdir -pv projectXYZ/{Stage1,Stage2,Stage3}/{DOCUMENTS,BUDGET}
+[sudo] password for ivan:
+mkdir: created directory 'projectXYZ'
+mkdir: created directory 'projectXYZ/Stage1'
+mkdir: created directory 'projectXYZ/Stage1/DOCUMENTS'
+mkdir: created directory 'projectXYZ/Stage1/BUDGET'
+mkdir: created directory 'projectXYZ/Stage2'
+mkdir: created directory 'projectXYZ/Stage2/DOCUMENTS'
+mkdir: created directory 'projectXYZ/Stage2/BUDGET'
+mkdir: created directory 'projectXYZ/Stage3'
+mkdir: created directory 'projectXYZ/Stage3/DOCUMENTS'
+mkdir: created directory 'projectXYZ/Stage3/BUDGET'
+[ivan@almalinux projects]$
+
+6
+[ivan@almalinux projects]$ cd projectXYZ
+[ivan@almalinux projectXYZ]$ sudo touch {Stage1,Stage2,Stage3}/DOCUMENTS/document{1..5}.doc
+
+7
+[ivan@almalinux projectXYZ]$ sudo touch {Stage1,Stage2,Stage3}/BUDGET/readme_{en,bg,de}.txt
+
+8
+[ivan@almalinux projectXYZ]$ sudo chown -R manager:manager /shared/projects/projectXYZ
+[ivan@almalinux projectXYZ]$ ls -l /shared/projects
+total 0
+drwxr-xr-x. 5 manager manager 48 Mar 16 22:03 projectXYZ
+
+9
+[ivan@almalinux projectXYZ]$ sudo chgrp -Rv projectxyz /shared/projects/projectXYZ
+
+10
+[ivan@almalinux projects]$ sudo find /shared/projects/projectXYZ/ -type d -exec chmod 770 {} \;
+
+11
+[ivan@almalinux projects]$ sudo find /shared/projects/projectXYZ -type f -exec chmod 660 {} \;	
+
+
