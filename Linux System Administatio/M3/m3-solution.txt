@@ -1,0 +1,59 @@
+1
+[ivan@almalinux ~]$ cp /etc/services ~/services
+
+2
+[ivan@almalinux ~]$ grep '^#' services > services_comments.txt
+
+3
+[ivan@almalinux ~]$ grep -v '^#' services > services_wo_comments.txt
+
+4
+[ivan@almalinux ~]$ grep 'udp' services_wo_comments.txt > services_udp.txt
+
+5
+[ivan@almalinux ~]$ vi services_wo_comments.txt
+
+6
+/blackjack
+
+7
+dG
+
+8
+:w ~/well-known-ports.txt
+
+9
+:q!
+
+10
+[ivan@almalinux ~]$ sed '1,100s#/#-#' well-known-ports.txt > 100-well-known-ports.txt
+
+11
+[ivan@almalinux ~]$ cat <<EOF > ~/doc1.txt
+10-IT-HQ
+20-Accounting-HQ
+30-Help Desk-Remote
+40-Sales-HQ
+EOF
+
+12
+[ivan@almalinux ~]$ cat <<EOF > ~/doc2.txt
+10-B.Thomas
+20-J.Foster
+30-G.Smith
+40-F.Hudson
+EOF
+
+13
+[ivan@almalinux ~]$  join -t '-' -j 1 doc1.txt doc2.txt > doc3.txt
+
+14
+[ivan@almalinux ~]$ cut -d '-' -f3 doc3.txt | sort -u > locations.txt
+
+15
+[ivan@almalinux ~]$ cut -d '-' -f3 doc3.txt | sort -u | wc -l > locations-count.txt
+
+16
+[ivan@almalinux ~]$ find /etc -type f -size -200c | sort > small-etc-files.txt
+
+
