@@ -1,0 +1,38 @@
+https://courses.zahariev.pro//check.php?202504101754031cEkM9oGjm
+
+1
+[ivan@almalinux ~]$ sudo vi /etc/default/grub
+'''
+GRUB_TIMEOUT=60
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=7"
+'''
+
+[ivan@almalinux ~]$ sudo grubby --update-kernel=ALL --remove-args=quiet
+[ivan@almalinux ~]$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg --update-bls-cmdline
+
+2
+[ivan@almalinux ~]$ dmesg -T | tac > boot-extract.txt
+
+3
+[ivan@almalinux ~]$ sudo grep '^After=' /usr/lib/systemd/system/sshd.service > sshd-after.txt
+
+4
+[ivan@almalinux ~]$ pstree -p > processes-tree.txt
+
+5
+[ivan@almalinux ~]$ df -B G > free-space.txt
+
+6
+[ivan@almalinux ~]$ sudo du -sh /* | sort -hr > used-space.txt
+
+
+7.
+[ivan@almalinux ~]$ sudo dnf install sysstat
+[ivan@almalinux ~]$ pidstat 5 5 > stat-output.txt
+
+8.
+[ivan@almalinux ~]$ lsof +D /etc > open-files.txt && echo "lsof +D /etc" >> open-files.txt
+[ivan@almalinux ~]$ echo "sudo lsof +D /etc" >> open-files.txt
+
+9.
+[ivan@almalinux ~]$ top -b -n 5 -d 5 > process-monitoring.txt
