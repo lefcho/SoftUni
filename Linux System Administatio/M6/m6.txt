@@ -1,0 +1,74 @@
+Solution M6 (@ivandk)
+Please fill in your SoftUni username above. Name the file M6-Solution, prepare a compressed archive, and upload it to the SoftUni site
+Solution Details
+CHECK: https://courses.zahariev.pro//check.php?20250415201201As6XxlbSGw
+Include the commands you used for every step. Also include the output if you like (either as pictures or as text)
+1.
+[ivan@almalinux ~]$ sudo dnf install tar
+[ivan@almalinux ~]$ time sudo tar -cJvf etc.tar.xz /etc
+
+2.
+[ivan@almalinux ~]$ sudo dnf install bzip2
+[ivan@almalinux ~]$ time sudo tar -cjvf etc.tar.bzip /etc
+
+3.
+[ivan@almalinux ~]$ time sudo tar -czvf etc.tar.gzip /etc
+
+5.
+[ivan@almalinux ~]$ sudo gdisk /dev/sdb
+
+n
+default
+default
+{size of part}
+{8300, 8200, 8e00}
+
+p
+w
+
+6.
+[ivan@almalinux ~]$ sudo mkdir -p /addon/xfs
+
+7.
+[ivan@almalinux ~]$ sudo mkfs.xfs -f /dev/sdb1 -L XFS01
+[ivan@almalinux ~]$ sudo mount /dev/sdb1 /addon/xfs
+
+8.
+[ivan@almalinux ~]$ sudo mkswap -L SWAP02 /dev/sdb2
+[ivan@almalinux ~]$ sudo swapon /dev/sdb2
+[ivan@almalinux ~]$ sudo blkid /dev/sdb2
+UUID=aabbccdd-eeff-1122-3344-556677889900   none   swap   defaults   0 0
+
+9.
+[ivan@almalinux ~]$ sudo mkdir -p /addon/ext4
+[ivan@almalinux ~]$ sudo mkfs.ext4 -L EXT4VOL /dev/sdb3
+[ivan@almalinux ~]$ sudo mount /dev/sdb3 /addon/ext4
+UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   /addon/ext4   ext4   defaults   0 0
+
+10.
+[ivan@almalinux ~]$ sudo pvcreate /dev/sdb4
+[ivan@almalinux ~]$ sudo pvcreate /dev/sdb5
+[ivan@almalinux ~]$ sudo pvcreate /dev/sdb6
+
+11.
+[ivan@almalinux ~]$ sudo vgcreate vg_addon /dev/sdb4 /dev/sdb5 /dev/sdb6
+
+12.
+[ivan@almalinux ~]$ sudo lvcreate -L 400M -n lv_addon vg_addon
+
+13.
+[ivan@almalinux ~]$ sudo mkdir -p /addon/lvm
+[ivan@almalinux ~]$ sudo mkfs.ext4 -L ADDON_LVM /dev/vg_addon/lv_addon
+[ivan@almalinux ~]$ sudo mount /dev/vg_addon/lv_addon /addon/lvm
+[ivan@almalinux ~]$ sudo blkid /dev/vg_addon/lv_addon
+[ivan@almalinux ~]$ sudo cp /etc/fstab /etc/fstab.bak
+[ivan@almalinux ~]$ sudo vi /etc/fstab
+UUID=abcd1234-5678-90ef-ghij-klmnopqrstuv   /addon/lvm   ext4   defaults   0 0
+
+14.
+[ivan@almalinux ~]$ sudo lvextend -l +100%FREE /dev/vg_addon/lv_addon
+
+15.
+[ivan@almalinux ~]$ sudo resize2fs /dev/vg_addon/lv_addon
+
+
