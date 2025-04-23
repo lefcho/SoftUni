@@ -1,0 +1,135 @@
+https://courses.zahariev.pro//check.php?20250423172134tkTmJ7vznW
+
+1.
+[ivan@almalinux ~]$ vi user-data.sh
+
+'''
+#!/bin/bash
+
+# user-data.sh
+#
+# Prompts for user details and appends them to /tmp/user-data.dat
+
+
+read -p 'Enter first name: ' FIRST_NAME
+
+read -p 'Enter last name: ' LAST_NAME
+
+read -p 'Enter place of birth: ' BIRTH_PLACE
+
+RECORD="${FIRST_NAME};${LAST_NAME};${BIRTH_PLACE}"
+
+echo "$RECORD" >> /tmp/user-data.dat
+
+'''
+
+
+2.
+[ivan@almalinux ~]$ bash user-data.sh
+Enter first name: Ivan
+Enter last name: Kostov
+Enter place of birth: Burgas
+[ivan@almalinux ~]$ cat /tmp/user-data.dat
+Ivan;Kostov;Burgas
+[ivan@almalinux ~]$ chmod +x user-data.sh
+[ivan@almalinux ~]$ ./user-data.sh
+Enter first name: John
+Enter last name: Smith
+Enter place of birth: London
+[ivan@almalinux ~]$ cat /tmp/user-data.dat
+Ivan;Kostov;Burgas
+John;Smith;London
+[ivan@almalinux ~]$ ./user-data.sh
+Enter first name: Pesho
+Enter last name: Peshov
+Enter place of birth: Kavarna
+[ivan@almalinux ~]$ cat /tmp/user-data.dat
+Ivan;Kostov;Burgas
+John;Smith;London
+Pesho;Peshov;Kavarna
+
+
+3.
+vi show-data.sh
+'''
+#!/bin/bash
+
+# show-data.sh
+#
+# Displays semicolon‑separated user data from a file, one record per line with numbering.
+
+
+# Check for exactly one parameter
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <data-file>"
+  exit 1
+fi
+
+record=1
+
+for line in $( cat $1 ); do
+  echo "Row #$record: $line"
+  record=$((record + 1))
+done
+'''
+[ivan@almalinux ~]$ ./show-data.sh /tmp/user-data.dat
+Row #1: Ivan;Kostov;Burgas
+Row #2: John;Smith;London
+Row #3: Pesho;Peshov;Kavarna
+Row #4: Dimitar;Zahariev;Provadia
+
+
+4.
+[ivan@almalinux ~]$ sudo dnf install tar
+[ivan@almalinux ~]$ vi archiver.sh
+'''
+#!/bin/bash
+
+# archiver.sh
+#
+# Usage: archiver.sh <source-folder> <target-archive.tar.gz>
+
+
+# Check for exactly two parameters
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 <source-folder> <target-archive.tar.gz>"
+  exit 1
+fi
+
+SOURCE="$1"
+TARGET="$2"
+
+# Validate source: must be an existing directory
+if [ ! -d "$SOURCE" ]; then
+  echo "Error: Source '$SOURCE' is not a directory or does not exist."
+  exit 2
+fi
+
+# Validate target: must not already exist
+if [ -e "$TARGET" ]; then
+  echo "Error: Target '$TARGET' already exists."
+  exit 3
+fi
+
+# Ensure target name ends with .tar.gz
+if [[ "$TARGET" != *.tar.gz ]]; then
+  echo "Error: Target '$TARGET' must have a .tar.gz extension."
+  exit 4
+fi
+
+# Create parent directory for target if needed
+TARGET_DIR=$(dirname "$TARGET")
+if [ ! -d "$TARGET_DIR" ]; then
+  mkdir -p "$TARGET_DIR" || { echo "Error: Cannot create directory '$TARGET_DIR'.";
+  exit 5; }
+fi
+
+# Create the archive
+tar -czvf "$TARGET" -C "$(dirname "$SOURCE")" "$(basename "$SOURCE")"
+
+exit 0
+'''
+
+[ivan@almalinux ~]$ chmod +x archiver.sh
+[ivan@almalinux ~]$ ./archiver.sh /bin /tmp/bin-backup.tar.gz
+
